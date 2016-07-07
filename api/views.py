@@ -17,6 +17,13 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework.permissions import *
 from rest_framework.decorators import *
 
+def home(request):
+	"""
+	Send requests to / to the ember.js clientside app  """
+	
+	return render_to_response('index.html',
+				{}, RequestContext(request))
+
 class UserViewSet(viewsets.ModelViewSet):
 	"""
 	API endpoint that allows users to be viewed.
